@@ -33,3 +33,26 @@
 
 <strong>2. Check that your variable is actually equals "the best" by executing a script to read that variable.</strong>
 > <img src="c2-d1-2.png" alt="Executed script" />
+
+## Chapter 2, Day 2
+<strong>1. Explain why we wouldn't call changeGreeting in a script.</strong>
+> The function changeGreeting is changing (mutating) a state variable in the smart contract on the blockchain, which requires a user as a signer and a fee (gas), so in cadence, that is done in a transaction not a script.
+
+<strong>2. What does the AuthAccount mean in the prepare phase of the transaction?</strong>
+> Allows access to the user's flow account as the signer that is responsible for sending the transaction.
+
+<strong>3. What is the difference between the prepare phase and the execute phase in the transaction?</strong>
+> The execute phase of a transaction doesn't have access to the user account, which is needed when sending a transaction. While calling a function in the prepare phase would work the same as calling in the execute phase, the separation logic between the 2 phases creates better organization and readability.
+
+<strong>4a. Add a variable named myNumber that has type Int (set it to 0 when the contract is deployed) and a function named updateMyNumber that takes in a new number named newNumber as a parameter that has type Int and updates myNumber to be newNumber.</strong>
+> <img src="c2-d2-1.png" alt="Deployed contract" />
+
+<strong>4b. Add a script that reads myNumber from the contract.</strong>
+> <img src="c2-d2-2.png" alt="Script" />
+
+<strong>4c. Add a transaction that takes in a parameter named myNewNumber and passes it into the updateMyNumber function.</strong>
+> <img src="c2-d2-3.png" alt="Transaction" />
+
+<strong>4d. Verify that your number changed by running the script again.</strong>
+> <img src="c2-d2-4.png" alt="Executed script" />
+
