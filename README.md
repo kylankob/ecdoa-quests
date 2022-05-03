@@ -27,3 +27,9 @@
 
 > 4. DX - at the end of the day, the developer role has the responsibility of creating the methods and means of what exactly users can interact with (bascially be able to actually "do" things on the blockchain). The language designers consideration of improvements to the developer environment will absolutely help the developer be as efficient as possible and ultimately produce a better product. 
 
+## Chapter 2, Day 1
+<strong>1. Deploy a contract to account 0x03 called "JacobTucker". Inside that contract, declare a constant variable named is, and make it have type String. Initialize it to "the best" when your contract gets deployed.</strong>
+> <img src="c2-d1-1.png" alt="Deployed contract" />
+
+<strong>2. Check that your variable is actually equals "the best" by executing a script to read that variable.</strong>
+> <img src="c2-d1-2.png" alt="Executed script" />
