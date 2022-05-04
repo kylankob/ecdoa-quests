@@ -65,7 +65,7 @@
 
 <strong>3. Explain what the force unwrap operator ! does, with an example different from the one I showed you (you can just change the type).</strong>
 > If a variable is an optional (i.e. the value can be whatever is assigned to it OR nil) and we want the actual type value out of it, cadence requires us to use the force-unwrap operator "!" to achieve this. When using the force-unwrap operator "!" and the optional value is nil, the result panics and execution is aborted.
-<img src="c2-d3-3.png" alt="Script executed" />
+> <img src="c2-d3-3.png" alt="Script executed" />
 
 <strong>4a. What does the error message mean?</strong>
 > When using dictionaries in cadence, elements in the dictionary are optionals by default, so the return type should be String? instead of String.
@@ -75,3 +75,13 @@
 
 <strong>4c. How to fix it?</strong>
 > Add the force-unwrap operator to the return statement (return thing[0x03]!) or change the return type to String?.
+
+## Chapter 2, Day 4
+<strong>1,2,3. Deploy a new contract that has a Struct of your choosing inside of it (must be different than Profile). Create a dictionary or array that contains the Struct you defined. Create a function to add to that array/dictionary.</strong>
+> <img src="c2-d4-1.png" alt="Contract deployed" />
+
+<strong>4. Add a transaction to call that function in step 3.</strong>
+> <img src="c2-d4-2.png" alt="Transaction executed" />
+
+<strong>5. Add a script to read the Struct you defined.</strong>
+> <img src="c2-d4-3.png" alt="Script executed" />
