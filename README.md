@@ -56,3 +56,22 @@
 <strong>4d. Verify that your number changed by running the script again.</strong>
 > <img src="c2-d2-4.png" alt="Executed script" />
 
+## Chapter 2, Day 3
+<strong>1. In a script, initialize an array (that has length == 3) of your favourite people, represented as Strings, and log it.</strong>
+> <img src="c2-d3-1.png" alt="Script executed" />
+
+<strong>2. In a script, initialize a dictionary that maps the Strings Facebook, Instagram, Twitter, YouTube, Reddit, and LinkedIn to a UInt64 that represents the order in which you use them from most to least. For example, YouTube --> 1, Reddit --> 2, etc. If you've never used one before, map it to 0!</strong>
+> <img src="c2-d3-2.png" alt="Script executed" />
+
+<strong>3. Explain what the force unwrap operator ! does, with an example different from the one I showed you (you can just change the type).</strong>
+> If a variable is an optional (i.e. the value can be whatever is assigned to it OR nil) and we want the actual type value out of it, cadence requires us to use the force-unwrap operator "!" to achieve this. When using the force-unwrap operator "!" and the optional value is nil, the result panics and execution is aborted.
+<img src="c2-d3-3.png" alt="Script executed" />
+
+<strong>4a. What does the error message mean?</strong>
+> When using dictionaries in cadence, elements in the dictionary are optionals by default, so the return type should be String? instead of String.
+
+<strong>4b. Why we're getting this error?</strong>
+> Because the script is trying to get the value out of the dictionary by key (which is an optional), the return type needs to be changed to String? or we need to use the force-unwrap operator.
+
+<strong>4c. How to fix it?</strong>
+> Add the force-unwrap operator to the return statement (return thing[0x03]!) or change the return type to String?.
