@@ -21,7 +21,7 @@
 <strong>2. In your opinion, even without knowing anything about the Blockchain or coding, why could the 5 Pillars be useful (you don't have to answer this for #5)?</strong>
 > 1. Safety and Security - making things more difficult to actually "mess up" and avoid inherently potential catastrophes when writing smart contracts is great asset to have in a programming language.
 
-> 2. Clarity - making the language "clearer" by design, certainly will be a helful asset (especially to newcomers) working with the langauge in the wild for the first time.
+> 2. Clarity - making the language "clearer" by design, certainly will be a helpful asset (especially to newcomers) when working with the language in the wild for the first time.
 
 > 3. Approachability - designing the language in such a way that can seem somewhat familiar to other langauges will certainly benefit those coming from other programming backgrounds.
 
@@ -42,7 +42,7 @@
 > Allows access to the user's flow account as the signer that is responsible for sending the transaction.
 
 <strong>3. What is the difference between the prepare phase and the execute phase in the transaction?</strong>
-> The execute phase of a transaction doesn't have access to the user account, which is needed when sending a transaction. While calling a function in the prepare phase would work the same as calling in the execute phase, the separation logic between the 2 phases creates better organization and readability.
+> The execute phase of a transaction doesn't have access to the user account, which is needed when sending a transaction. While calling a function in the prepare phase would work the same as calling it in the execute phase, the separation of logic between the 2 phases creates better code organization and readability.
 
 <strong>4a. Add a variable named myNumber that has type Int (set it to 0 when the contract is deployed) and a function named updateMyNumber that takes in a new number named newNumber as a parameter that has type Int and updates myNumber to be newNumber.</strong>
 > <img src="c2-d2-1.png" alt="Deployed contract" />
