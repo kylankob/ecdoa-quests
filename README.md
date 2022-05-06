@@ -1,5 +1,14 @@
 0x36c2120b78c5dea0
 
+* Table of Contents
+  * [Chapter 1, Day 1](#chapter-1-day-1)
+  * [Chapter 1, Day 2](#chapter-1-day-2)
+  * [Chapter 2, Day 1](#chapter-2-day-1)
+  * [Chapter 2, Day 2](#chapter-2-day-2)
+  * [Chapter 2, Day 3](#chapter-2-day-3)
+  * [Chapter 2, Day 4](#chapter-2-day-4)
+  * [Chapter 3, Day 1](#chapter-3-day-1)
+
 ## Chapter 1, Day 1
 <strong>1. Explain what the Blockchain is in your own words.</strong>
 > A publicly accessible, decentralized and open network of computers that collectively store an ever increasing "list" of data records or blocks. Each new block of data is "connected" to a previous block using cryptography, with each new one added reinforcing the security to past and future blocks as the chain of blocks (blockchain) continues to grow. 
