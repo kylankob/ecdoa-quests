@@ -85,3 +85,24 @@
 
 <strong>5. Add a script to read the Struct you defined.</strong>
 > <img src="c2-d4-3.png" alt="Script executed" />
+
+## Chapter 3, Day 1
+<strong>1. In words, list 3 reasons why structs are different from resources.</strong>
+> a. Structs can be copied or overwritten, resources cannot, they can be created exactly once, and must be moved or destroyed.
+b. Structs can be created outside of a contract, resources can only be created in a contract.
+c. Structs are containers of data, resources are very secure, well-kept containers of data that cannot be lost.
+
+<strong>2. Describe a situation where a resource might be better to use than a struct.</strong>
+> Since cadence makes losing a resource extremely difficult, resources are ideal for NFTs (whether super expensive or not) because unless you explicitly tell it to destroy, you can be very, very sure the NFT won't be lost and handled the way you as the developer intend it to.
+
+<strong>3. What is the keyword to make a new resource?</strong>
+> create
+
+<strong>4. Can a resource be created in a script or transaction (assuming there isn't a public function to create one)?</strong>
+> No, a resource can only be created in a contract.
+
+<strong>5. What is the type of the resource below?</strong>
+> @Jacob
+
+<strong>6. I Spy 4 things wrong with this code. Please fix them.</strong>
+> <img src="c3-d1-1.png" alt="Contract" />
