@@ -8,6 +8,7 @@
   * [Chapter 2, Day 3](#chapter-2-day-3)
   * [Chapter 2, Day 4](#chapter-2-day-4)
   * [Chapter 3, Day 1](#chapter-3-day-1)
+  * [Chapter 3, Day 2](#chapter-3-day-2)
 
 ## Chapter 1, Day 1
 <strong>1. Explain what the Blockchain is in your own words.</strong>
@@ -115,3 +116,55 @@ c. Structs are containers of data, resources are very secure, well-kept containe
 
 <strong>6. I Spy 4 things wrong with this code. Please fix them.</strong>
 > <img src="c3-d1-1.png" alt="Contract" />
+
+## Chapter 3, Day 2
+<strong>1. Write your own smart contract that contains two state variables: an array of resources, and a dictionary of resources. Add functions to remove and add to each of them.</strong>
+```cadence
+pub contract CardGame {
+    pub var players: @[Player]
+    pub var details: @{UInt64: Detail}
+
+    pub resource Player {
+        pub let id: UInt64
+
+        init() {
+            self.id = 1
+        }
+    }
+
+    pub resource Detail {
+        pub let id: UInt64
+        pub let name: String
+
+        init() {
+            self.id = 1
+            self.name = "Kylan"
+        }
+    }
+
+    pub fun addPlayer(player: @Player) {
+        self.players.append(<- player)
+    }
+
+    pub fun removePlayer(index: Int): @Player {
+        return <- self.players.remove(at: index)
+    }
+
+    pub fun addDetail(detail: @Detail) {
+        let key = detail.id
+        let oldDetail <- self.details[key] <- detail
+        destroy oldDetail
+    }
+
+    pub fun removeDetail(key: UInt64): @Detail {
+        let detail <- self.details.remove(key: key)
+                ?? panic("Could not find detail")
+        return <- detail
+    }
+
+    init() {
+        self.players <- []
+        self.details <- {}
+    }
+}
+```
