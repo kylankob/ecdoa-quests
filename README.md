@@ -9,6 +9,7 @@
   * [Chapter 2, Day 4](#chapter-2-day-4)
   * [Chapter 3, Day 1](#chapter-3-day-1)
   * [Chapter 3, Day 2](#chapter-3-day-2)
+  * [Chapter 3, Day 3](#chapter-3-day-3)
 
 ## Chapter 1, Day 1
 <strong>1. Explain what the Blockchain is in your own words.</strong>
@@ -168,3 +169,13 @@ pub contract CardGame {
     }
 }
 ```
+
+## Chapter 3, Day 3
+<strong>1. Define your own contract that stores a dictionary of resources. Add a function to get a reference to one of the resources in the dictionary.</strong>
+> <img src="c3-d3-1.png" alt="Contract" />
+
+<strong>2. Create a script that reads information from that resource using the reference from the function you defined in part 1.</strong>
+> <img src="c3-d3-2.png" alt="Script" />
+
+<strong>3. Explain, in your own words, why references can be useful in Cadence.</strong>
+> References seem like they can be a kind of "shortcut" to getting at the information we want in a resource without having to keep track of and move the actual resource around as per the normal rules of cadence (can only exist in one location at a time, must be used exactly once and either moved or destroyed once finished).
