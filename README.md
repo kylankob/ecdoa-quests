@@ -10,6 +10,7 @@
   * [Chapter 3, Day 1](#chapter-3-day-1)
   * [Chapter 3, Day 2](#chapter-3-day-2)
   * [Chapter 3, Day 3](#chapter-3-day-3)
+  * [Chapter 3, Day 4](#chapter-3-day-4)
 
 ## Chapter 1, Day 1
 <strong>1. Explain what the Blockchain is in your own words.</strong>
@@ -179,3 +180,16 @@ pub contract CardGame {
 
 <strong>3. Explain, in your own words, why references can be useful in Cadence.</strong>
 > References seem like they can be a kind of "shortcut" to getting at the information we want in a resource without having to keep track of and move the actual resource around as per the normal rules of cadence (can only exist in one location at a time, must be used exactly once and either moved or destroyed once finished).
+
+
+## Chapter 3, Day 4
+<strong>1. Explain, in your own words, the 2 things resource interfaces can be used for (we went over both in today's content).</strong>
+> Interfaces in Cadence allow the developer to specify requirements for something, i.e. the ability to selectively expose / don't expose a variable or function contained in a resource.
+
+<strong>2. Define your own contract. Make your own resource interface and a resource that implements the interface. Create 2 functions. In the 1st function, show an example of not restricting the type of the resource and accessing its content. In the 2nd function, show an example of restricting the type of the resource and NOT being able to access its content.</strong>
+> <img src="c3-d4-1png" alt="Contract" />
+
+<strong>3. How would we fix this code?</strong>
+> Add favouriteFruit variable definiton to Test (if an interface contains something, it must also be present in the struct that is implementing it). Add self.FavouriteFruit to init. Add the changeGreeting function definition to ITest.
+> <img src="c3-d4-2.png" alt="Contract" />
+
