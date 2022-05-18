@@ -11,6 +11,7 @@
   * [Chapter 3, Day 2](#chapter-3-day-2)
   * [Chapter 3, Day 3](#chapter-3-day-3)
   * [Chapter 3, Day 4](#chapter-3-day-4)
+  * [Chapter 3, Day 5](#chapter-3-day-5)
 
 ## Chapter 1, Day 1
 <strong>1. Explain what the Blockchain is in your own words.</strong>
@@ -191,3 +192,41 @@ pub contract CardGame {
 <strong>3. How would we fix this code?</strong>
 > Add favouriteFruit variable definiton to Test (if an interface contains something, it must also be present in the struct that is implementing it). Add self.FavouriteFruit to init. Add the changeGreeting function definition to ITest.
 > <img src="c3-d4-2.png" alt="Contract" />
+
+## Chapter 3, Day 5
+<strong>For today's quest, you will be looking at a contract and a script. You will be looking at 4 variables (a, b, c, d) and 3 functions (publicFunc, contractFunc, privateFunc) defined in SomeContract. In each AREA (1, 2, 3, and 4), I want you to do the following: for each variable (a, b, c, and d), tell me in which areas they can be read (read scope) and which areas they can be modified (write scope). For each function (publicFunc, contractFunc, and privateFunc), simply tell me where they can be called.</strong>
+> #### Area 1
+> a - read yes, write yes<br>
+> b - read yes, write yes<br>
+> c - read yes, write yes<br>
+> d - read yes, write yes<br>
+> publicFunc - can be called<br>
+> contractFunc - can be called<br>
+> privateFunc - can be called<br>
+	
+> #### Area 2
+> a - read yes, write yes<br>
+> b - read yes, write no<br>
+> c - read yes, write no<br>
+> d - read no, write no<br>
+> publicFunc - can be called<br>
+> contractFunc - can be called<br>
+> privateFunc - cannot be called<br>
+	
+> #### Area 3
+> a - read yes, write yes<br>
+> b - read yes, write no<br>
+> c - read yes, write no<br>
+> d - read no, write no<br>
+> publicFunc - can be called<br>
+> contractFunc - can be called<br>
+> privateFunc - cannot be called<br>
+	
+> #### Area 4
+> a - read yes, write yes<br>
+> b - read yes, write no<br>
+> c - read no, write no<br>
+> d - read no, write no<br>
+> publicFunc - can be called<br>
+> contractFunc - cannot be called<br>
+> privateFunc - cannot be called<br>
