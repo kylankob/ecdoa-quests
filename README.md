@@ -12,6 +12,7 @@
   * [Chapter 3, Day 3](#chapter-3-day-3)
   * [Chapter 3, Day 4](#chapter-3-day-4)
   * [Chapter 3, Day 5](#chapter-3-day-5)
+  * [Chapter 4, Day 1](#chapter-4-day-1)
 
 ## Chapter 1, Day 1
 <strong>1. Explain what the Blockchain is in your own words.</strong>
@@ -230,3 +231,28 @@ pub contract CardGame {
 > publicFunc - can be called<br>
 > contractFunc - cannot be called<br>
 > privateFunc - cannot be called<br>
+
+## Chapter 4, Day 1
+<strong>1. Explain what lives inside of an account.</strong>
+> One (or more) contracts deployed to said account and account storage (which has paths of /storage, /public, /private).
+
+<strong>2. What is the difference between the /storage/, /public/, and /private/ paths?</strong>
+> All data that is stored in said account lives in the /storage path (which is only accessable by the account owner). The /public/ path can contain data that the owner wants anyone to access. The /private path restricts data access to only the account owner and users that the owner gives access to.
+
+<strong>3. What does .save() do? What does .load() do? What does .borrow() do?</strong>
+> .save() allows the account owner to put something in /storage (i.e. a resource). .load() allows the owner to take something out of /storage (in the case of a resource, .load() will move the resource out of /storage and as such must either be returned or destroyed). Once this action is completed, the resource will no longer be in /storage (and could be saved again). .borrow() essentially creates a reference to some data in /storage, the resource is not moved (it remains in /storage), but we can use the reference to get variables or call functions that are defined in the resource.
+
+<strong>4. Explain why we couldn't save something to our account storage inside of a script.</strong>
+> A script doesn't have access to the account signer, which is required to save data to /storage.
+
+<strong>5. Explain why I couldn't save something to your account.</strong>
+> Only the account owner (signer) has the ability to save data to their /storage.
+
+<strong>6. Define a contract that returns a resource that has at least 1 field in it.</strong>
+> <img src="c4-d1-1.png" alt="Contract" />
+
+<strong>i. A transaction that first saves the resource to account storage, then loads it out of account storage, logs a field inside the resource, and destroys it.</strong>
+> <img src="c4-d1-2.png" alt="Transaction" />
+
+<strong>ii. A transaction that first saves the resource to account storage, then borrows a reference to it, and logs a field inside the resource.</strong>
+> <img src="c4-d1-3.png" alt="Transaction" />
