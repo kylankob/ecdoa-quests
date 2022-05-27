@@ -13,6 +13,7 @@
   * [Chapter 3, Day 4](#chapter-3-day-4)
   * [Chapter 3, Day 5](#chapter-3-day-5)
   * [Chapter 4, Day 1](#chapter-4-day-1)
+  * [Chapter 4, Day 2](#chapter-4-day-2)
 
 ## Chapter 1, Day 1
 <strong>1. Explain what the Blockchain is in your own words.</strong>
@@ -256,3 +257,22 @@ pub contract CardGame {
 
 <strong>ii. A transaction that first saves the resource to account storage, then borrows a reference to it, and logs a field inside the resource.</strong>
 > <img src="c4-d1-3.png" alt="Transaction" />
+
+## Chapter 4, Day 2
+<strong>1. What does .link() do?</strong>
+> Creates a capability. For example, a capability can be used to "give" someone else access to certain data in owner's storage.
+
+<strong>2. In your own words (no code), explain how we can use resource interfaces to only expose certain things to the /public/ path.</strong>
+> Resource interfaces allow the owner to basically select (or restrict) what data (and/or functions) that can be exposed to someone else. In other words, if a resource contains a name and birthday variable and a function that can change the value of birthday, the owner may wish to give access to read the 2 variables to others, but not to execute the fucntion to change the birthday. This can be done by adding a resource interface that only contains the variable names (omits the function) and then restricting the linking of the resource by implemeting the interface.
+
+<strong>3. Deploy a contract that contains a resource that implements a resource interface.</strong>
+> <img src="c4-d2-1.png" alt="Contract" />
+
+<strong>i. In a transaction, save the resource to storage and link it to the public with the restrictive interface.</strong>
+> <img src="c4-d2-2.png" alt="Transaction" />
+
+<strong>ii. Run a script that tries to access a non-exposed field in the resource interface, and see the error pop up.</strong>
+> <img src="c4-d2-3.png" alt="Script" />
+
+<strong>iii. Run the script and access something you CAN read from. Return it from the script.</strong>
+> <img src="c4-d2-4.png" alt="Script" />
