@@ -276,3 +276,15 @@ pub contract CardGame {
 
 <strong>iii. Run the script and access something you CAN read from. Return it from the script.</strong>
 > <img src="c4-d2-4.png" alt="Script" />
+
+## Chapter 4, Day 3
+<strong>Why did we add a Collection to this contract? List the two main reasons.</strong>
+> Using collections allows users to store multiple NFTs in the same storage path, rather than having to create and manage unique paths for each NFT. The use of collections also helps in preventing an NFT at a specific storage location from inadvertently being overwritten.
+
+<strong>2. What do you have to do if you have resources "nested" inside of another resource? ("Nested resources")?</strong>
+> Must declare a destroy function with the resource that will be called to destroy all nested resource in said resource when using the "destroy" keyword.
+
+<strong>3. Brainstorm some extra things we may want to add to this contract. Think about what might be problematic with this contract and how we could fix it.</strong>
+> Rather than allowing anyone to mint an NFT, perhaps restrict access to minting NFTs to a single designated "admin" account. Once th NFT is minted by the admin, it can be withdrawn and transferred to the user's account.
+
+> Rather than having to actually take an NFT out of its collection to read information about it, we can use references and capabilities to provide similar functionality.
