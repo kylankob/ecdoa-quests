@@ -15,6 +15,7 @@
   * [Chapter 4, Day 1](#chapter-4-day-1)
   * [Chapter 4, Day 2](#chapter-4-day-2)
   * [Chapter 4, Day 3](#chapter-4-day-3)
+  * [Chapter 4, Day 4](#chapter-4-day-4)
 
 ## Chapter 1, Day 1
 <strong>1. Explain what the Blockchain is in your own words.</strong>
