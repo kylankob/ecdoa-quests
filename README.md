@@ -379,7 +379,8 @@ pub contract CryptoPoops {
 
   /*
     Define a Minter resource containing:
-      createMinter: function to return a Minter resource
+      createNFT: function to create and return an NFT resource given some attributes as arguments
+      createMinter: function to create and return a Minter resource
   */
   pub resource Minter {
 
@@ -394,7 +395,7 @@ pub contract CryptoPoops {
   }
   
   /*
-    init: contract init function:
+    Contract init function containing:
       sets totalSupply variable to 0
       saves the Minter resource to account storage at path /storage/Minter
   */
