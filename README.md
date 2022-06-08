@@ -289,3 +289,117 @@ pub contract CardGame {
 > Rather than allowing anyone to mint an NFT, perhaps restrict access to minting NFTs to a single designated "admin" account. Once th NFT is minted by the admin, it can be withdrawn and transferred to the user's account.
 
 > Rather than having to actually take an NFT out of its collection to read information about it, we can use references and capabilities to provide similar functionality.
+
+## Chapter 4, Day 4
+<strong>Add comments to every single resource or function explaining what it's doing in your own words.</strong>
+```cadence
+pub contract CryptoPoops {
+  /* 
+    Define a variable to keep track of the total supply of NFTs
+  */
+  pub var totalSupply: UInt64
+
+  /*
+    Define an NFT resource containing some attributes:
+      name
+      favouriteFood
+      luckyNumber
+      init: function to accept attribute values, all resources have a unique id available as self.uuid 
+  */
+  pub resource NFT {
+    pub let id: UInt64
+
+    pub let name: String
+    pub let favouriteFood: String
+    pub let luckyNumber: Int
+
+    init(_name: String, _favouriteFood: String, _luckyNumber: Int) {
+      self.id = self.uuid
+
+      self.name = _name
+      self.favouriteFood = _favouriteFood
+      self.luckyNumber = _luckyNumber
+    }
+  }
+
+  /*
+    Define an NFT resource interface restricting access to specific functions
+  */
+  pub resource interface CollectionPublic {
+    pub fun deposit(token: @NFT)
+    pub fun getIDs(): [UInt64]
+    pub fun borrowNFT(id: UInt64): &NFT
+  }
+
+  /*
+    Define a Collection resource containing:
+      ownedNFTs: Dictionary mapping an Id to its NFT resource
+      deposit: function to deposit an NFT resource
+      withdraw: function to withdraw an NFT given its Id
+      getIDs: function to return an array of NFT Ids
+      borrowNFT: function to return an NFT resource reference given an Id
+  */
+  pub resource Collection: CollectionPublic {
+    pub var ownedNFTs: @{UInt64: NFT}
+
+    pub fun deposit(token: @NFT) {
+      self.ownedNFTs[token.id] <-! token
+    }
+
+    pub fun withdraw(withdrawID: UInt64): @NFT {
+      let nft <- self.ownedNFTs.remove(key: withdrawID) 
+              ?? panic("This NFT does not exist in this Collection.")
+      return <- nft
+    }
+
+    pub fun getIDs(): [UInt64] {
+      return self.ownedNFTs.keys
+    }
+
+    pub fun borrowNFT(id: UInt64): &NFT {
+      return &self.ownedNFTs[id] as &NFT
+    }
+
+    init() {
+      self.ownedNFTs <- {}
+    }
+
+    destroy() {
+      destroy self.ownedNFTs
+    }
+  }
+  
+  /*
+    Define a function to create an empty Collection resource
+  */
+  pub fun createEmptyCollection(): @Collection {
+    return <- create Collection()
+  }
+
+  /*
+    Define a Minter resource containing:
+      createMinter: function to return a Minter resource
+  */
+  pub resource Minter {
+
+    pub fun createNFT(name: String, favouriteFood: String, luckyNumber: Int): @NFT {
+      return <- create NFT(_name: name, _favouriteFood: favouriteFood, _luckyNumber: luckyNumber)
+    }
+
+    pub fun createMinter(): @Minter {
+      return <- create Minter()
+    }
+
+  }
+  
+  /*
+    init: contract init function:
+      sets totalSupply variable to 0
+      saves the Minter resource to account storage at path /storage/Minter
+  */
+  init() {
+    self.totalSupply = 0
+    self.account.save(<- create Minter(), to: /storage/Minter)
+  }
+}
+```
